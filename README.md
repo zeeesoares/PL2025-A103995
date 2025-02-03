@@ -1,6 +1,6 @@
 # PL2025-A103995
 
-![José Soares](josesoares.png)  
+![José Soares](josesoares.jpg)  
 
 ## Identificação  
 - **Nome:** José António Costa Soares
