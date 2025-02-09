@@ -3,7 +3,9 @@
 ## Autor
 - **Nome:** José António Costa Soares
 - **Número de Aluno:** A103995
-- **Foto:** ![José Soares](../images/josesoares.jpg)  
+- **Foto:**
+
+![José Soares](../images/josesoares.jpg)  
 
 
 ## Resumo
@@ -15,11 +17,10 @@ O objetivo deste problema era realizar a soma de todas as sequências de dígito
 - Se fosse encontrado o comando "Off", a soma era interrompida.
 - O operador "=" servia para exibir o resultado da soma até aquele momento.
 
+
 ### Implementação
 
 A resolução foi realizada em Python, dividindo o problema em três partes principais:
-
-
 
 - Tokenização (Lexer)
     - O ficheiro de entrada era processado caractere por caractere.
@@ -49,6 +50,8 @@ A resolução foi realizada em Python, dividindo o problema em três partes prin
     ```
     [Token(CMD, On), Token(NUM, 1), Token(NUM, 3), Token(EQ, =), Token(NUM, 1), Token(CMD, On), Token(NUM, 10), Token(EQ, =)]
     ```
+
+
 
 - Interpretação (Somador)
 
