@@ -1,3 +1,5 @@
+import sys
+
 class Token:
     def __init__(self, tipo, valor):
         self.tipo = tipo  # "NUM", "CMD", "EQ"
@@ -29,12 +31,19 @@ def lexer(ficheiro):
                 while i < n and conteudo[i].isalpha():  
                     palavra += conteudo[i]
                     i += 1
+
                 palavra = palavra.lower()
                 
-                if "on" in palavra:
-                    tokens.append(Token("CMD", "On"))
-                elif "off" in palavra:
-                    tokens.append(Token("CMD", "Off"))
+                j = 0
+                while j < len(palavra):
+                    if palavra[j:j+2] == "on":
+                        tokens.append(Token("CMD", "On"))
+                        j += 2
+                    elif palavra[j:j+3] == "off":
+                        tokens.append(Token("CMD", "Off"))
+                        j += 3
+                    else:
+                        j += 1
                 continue 
 
             elif char == "=":
@@ -62,7 +71,13 @@ def interpreter(tokens):
 
     return count
 
-tokens = lexer("dataset.txt")  
-print(tokens)  
-value = interpreter(tokens)
-print(f"Resultado Final: {value}")
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Uso: py script.py <nome_do_ficheiro>")
+        sys.exit(1)
+
+    nome_ficheiro = sys.argv[1]  
+    tokens = lexer(nome_ficheiro)  
+    print(tokens)  
+    value = interpreter(tokens)
+    print(f"Resultado Final: {value}")

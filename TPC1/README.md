@@ -9,9 +9,9 @@
 
 
 ## Resumo
-Nesta diretoria encontra-se a resolução do TPC1 proposto na aula teórica realizada no dia 7 de fevereiro.  
+Nesta diretoria encontra-se a resolução do TPC1 proposto na aula teórica realizada no dia 7 de fevereiro de 2025.  
 
-O objetivo deste problema era realizar a soma de todas as sequências de dígitos presentes num ficheiro de texto.As restrições estavam focadas na existência de comandos capazes de ligar ou desligar a soma:
+O objetivo deste problema era realizar a soma de todas as sequências de dígitos presentes num ficheiro de texto. As restrições estavam focadas na existência de comandos capazes de ligar ou desligar a soma:
 
 - Sempre que fosse encontrado o comando "On", o contador passava a somar os números encontrados.
 - Se fosse encontrado o comando "Off", a soma era interrompida.
@@ -20,7 +20,7 @@ O objetivo deste problema era realizar a soma de todas as sequências de dígito
 
 ### Implementação
 
-A resolução foi realizada em Python, dividindo o problema em três partes principais:
+A resolução foi realizada em Python, dividindo o problema em duas partes principais:
 
 - Tokenização (Lexer)
     - O ficheiro de entrada era processado caractere por caractere.
@@ -48,7 +48,7 @@ A resolução foi realizada em Python, dividindo o problema em três partes prin
     Deve resultar numa tokenização em:
 
     ```
-    [Token(CMD, On), Token(NUM, 1), Token(NUM, 3), Token(EQ, =), Token(NUM, 1), Token(CMD, On), Token(NUM, 10), Token(EQ, =)]
+    [Token(CMD, On), Token(NUM, 1), Token(NUM, 3), Token(EQ, =), Token(NUM, 1), Token(CMD, Off), Token(CMD, On), Token(NUM, 10), Token(EQ, =)]
     ```
 
 
@@ -64,3 +64,18 @@ A resolução foi realizada em Python, dividindo o problema em três partes prin
 ## Lista de Resultados
 
 O programa desenvolvido foi testado com diversos testes e confirmou-se que estes funcionavam corretamente e devolviam os valores esperados.
+
+Tendo em conta o exemplo anterior:
+```
+on1sfa*@daf3=1offosdson 10=
+```
+
+O Resultado esperado encontrado foi:
+
+```
+4
+15
+Resultado Final: 15
+```
+
+Em testes maiores, os resultados correspondem e mantêm-se corretos.
