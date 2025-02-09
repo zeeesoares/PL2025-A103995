@@ -6,4 +6,4 @@ Este repositório contém os Trabalhos Práticos (TPCs) da unidade curricular **
 ## Aluno
 - **Nome:** José António Costa Soares
 - **Número de Aluno:** A103995
-- **Foto:** ![José Soares](images/josesoares.jpg)  
+- **Foto:** ![José Soares](/images/josesoares.jpg)  
