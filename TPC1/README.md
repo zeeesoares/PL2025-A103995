@@ -78,4 +78,7 @@ O Resultado esperado encontrado foi:
 Resultado Final: 15
 ```
 
-Em testes maiores, os resultados correspondem e mantêm-se corretos.
+Em testes maiores, os resultados correspondem e mantêm-se corretos. Como ficou representado em:
+
+- [dataset.txt](dataset.txt) - Conjunto de dados Entrada
+- [result.txt](result.txt) - Conjunto de dados de saída
