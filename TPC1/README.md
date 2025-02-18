@@ -42,13 +42,13 @@ A resolução foi realizada em Python, dividindo o problema em duas partes princ
     Sendo assim ficheiros de entrada contendo, por exemplo:
 
     ```
-    on1sfa*@daf3=1offosdson 10=
+    on1sfa*@daf3=1offos12dson 10=
     ```
 
     Deve resultar numa tokenização em:
 
     ```
-    [Token(CMD, On), Token(NUM, 1), Token(NUM, 3), Token(EQ, =), Token(NUM, 1), Token(CMD, Off), Token(CMD, On), Token(NUM, 10), Token(EQ, =)]
+   [Token(CMD, On), Token(NUM, 1), Token(NUM, 3), Token(EQ, =), Token(NUM, 1), Token(CMD, Off), Token(NUM, 12), Token(CMD, On), Token(NUM, 10), Token(EQ, =)]
     ```
 
 
@@ -67,7 +67,7 @@ O programa desenvolvido foi testado com diversos testes e confirmou-se que estes
 
 Tendo em conta o exemplo anterior:
 ```
-on1sfa*@daf3=1offosdson 10=
+on1sfa*@daf3=1offos12dson 10=
 ```
 
 O Resultado esperado encontrado foi:
