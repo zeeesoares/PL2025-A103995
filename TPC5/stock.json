@@ -1,0 +1,46 @@
+{
+    "stock": [
+        {
+            "cod": "A23",
+            "nome": "água",
+            "quant": 2,
+            "preco": 0.7
+        },
+        {
+            "cod": "A24",
+            "nome": "bolachas",
+            "quant": 7,
+            "preco": 0.65
+        },
+        {
+            "cod": "A25",
+            "nome": "kinder",
+            "quant": 6,
+            "preco": 1.5
+        },
+        {
+            "cod": "A26",
+            "nome": "gomas",
+            "quant": 5,
+            "preco": 1.2
+        },
+        {
+            "cod": "A27",
+            "nome": "compal",
+            "quant": 10,
+            "preco": 0.8
+        },
+        {
+            "cod": "A28",
+            "nome": "lanche",
+            "quant": 3,
+            "preco": 0.95
+        },
+        {
+            "cod": "A29",
+            "nome": "pastilhas",
+            "quant": 12,
+            "preco": 1.0
+        }
+    ]
+}
