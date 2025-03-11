@@ -1,4 +1,4 @@
-# Conversor de MarkDown para HTML
+# Analisador Léxico
 
 ## Autor
 - **Nome:** José António Costa Soares
