@@ -1,4 +1,4 @@
-# Analisador Léxico
+# Analisador Sintático
 
 ## Autor
 - **Nome:** José António Costa Soares
