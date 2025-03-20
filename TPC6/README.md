@@ -31,14 +31,14 @@ Para construir o analisador utilizei a biblioteca **ply.lex** do python, e tendo
 Desta vez, para a realização deste modulo decidi primeiramente construir a minha gramática de forma a lidar com as restrições provocas pela ordem das operações matemáticas, uma vez que as multiplicações e divisões devem todos preceder as somas ou subtrações. Para isto desenvolbi a seguinte gramática:
 
 ```hs
-Exp : Term Exp'
+Exp : Term ExpCont
 
-Exp': ('+' | '-') Term Exp'
+ExpCont: ('+' | '-') Term ExpCont
     | ε
 
-Term : Num Term'
+Term : Num TermCont
 
-Term': ('*' | '/') Num Term'
+TermCont: ('*' | '/') Num TermCont
      | ε
 ```
 
@@ -54,14 +54,14 @@ Um exemplo poderá ser ```2 + 7 * 2```
          /  \
         /    \
        /      \
-    Tern     Exp'------
+    Tern     ExpCont------
     /\        /\       \
-   /  \      +  Term   Exp'
+   /  \      +  Term   ExpCont
   /    \          /\       \
- Num  Term'      /  \       ε
- /      \       7   Term'---
+ Num  TermCont      /  \       ε
+ /      \       7   TermCont---
 2        ε           /\    \
-                    *  2   Term'
+                    *  2   TermCont
                               \
                                ε
 

@@ -1,13 +1,13 @@
 from tpc_analex import lexer
 '''
-Exp : Term Exp'
+Exp : Term ExpCont
 
-Exp': ('+' | '-') Term Exp'
+ExpCont: ('+' | '-') Term ExpCont
     | ε
 
-Term : Num Term'
+Term : Num TermCont
 
-Term': ('*' | '/') Num Term'
+TermCont: ('*' | '/') Num TermCont
      | ε
 '''
 
@@ -20,9 +20,9 @@ def next():
 
 def rec_expr():
     left = rec_term()
-    return rec_expr_linha(left)
+    return rec_expr_cont(left)
 
-def rec_expr_linha(left):
+def rec_expr_cont(left):
     global next_token
 
     if next_token and next_token.value in ('+', '-'):
@@ -30,7 +30,7 @@ def rec_expr_linha(left):
         next()
         right = rec_term()
         result = (op, left, right)
-        return rec_expr_linha(result)
+        return rec_expr_cont(result)
 
     return left  
 
@@ -40,11 +40,11 @@ def rec_term():
     if next_token and next_token.type == 'NUM':
         left = next_token.value
         next()
-        return rec_term_linha(left)
+        return rec_term_cont(left)
     else:
         raise ValueError("Número esperado")
 
-def rec_term_linha(left):
+def rec_term_cont(left):
     global next_token
 
     if next_token and next_token.value in ('*', '/'):
@@ -55,7 +55,7 @@ def rec_term_linha(left):
             right = next_token.value
             next()
             result = (op, left, right)
-            return rec_term_linha(result)
+            return rec_term_cont(result)
 
         else:
             raise ValueError("Número esperado após operador")
