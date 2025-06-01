@@ -1,0 +1,4 @@
+START
+PUSHS "Ola, Mundo!"
+WRITES
+STOP

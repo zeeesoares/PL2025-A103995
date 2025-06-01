@@ -1,0 +1,17 @@
+program VerificaPar;
+
+function EhPar(n: integer): boolean;
+begin
+    EhPar := (n mod 2 = 0);
+end;
+
+var
+    numero: integer;
+begin
+    writeln("Introduza um numero:");
+    readln(numero);
+    if EhPar(numero) then
+        writeln('É par')
+    else
+        writeln('É ímpar');
+end.

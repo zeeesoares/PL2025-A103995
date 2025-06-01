@@ -1,0 +1,212 @@
+program
+    : PROGRAM ID SEMI block DOT
+    ;
+
+block
+    : declaration_section func_section compound_section
+    | declaration_section compound_section
+    ;
+
+declaration_section
+    : ε
+    | VAR declaration_list
+    ;
+
+declaration_list
+    : declaration
+    | declaration_list declaration
+    ;
+
+declaration
+    : id_list COLON type SEMI
+    ;
+
+id_list
+    : ID
+    | id_list COMMA ID
+    ;
+
+type
+    : INTEGER
+    | BOOLEAN
+    | STRING
+    | ARRAY LBRACK NUMBER DOTDOT NUMBER RBRACK OF type
+    ;
+
+func_section
+    : ε
+    | func_section func_declaration
+    ;
+
+func_declaration
+    : FUNCTION ID LPAREN parameters RPAREN COLON type SEMI block SEMI
+    | PROCEDURE ID LPAREN parameters RPAREN SEMI block SEMI
+    ;
+
+parameters
+    : ε
+    | parameter_list
+    ;
+
+parameter_list
+    : parameter
+    | parameter_list SEMI parameter
+    ;
+
+parameter
+    : id_list COLON type
+    ;
+
+compound_section
+    : BEGIN statement_list END
+    ;
+
+statement_list
+    : statement SEMI
+    | statement_list statement SEMI
+    ;
+
+statement
+    : assign_statement
+    | if_statement
+    | while_statement
+    | for_statement
+    | repeat_statement
+    | compound_section
+    | function_call
+    | write_statement
+    | read_statement
+    | ε
+    ;
+
+assign_statement
+    : variable ASSIGN expression
+    ;
+
+variable
+    : ID
+    | ID LBRACK expression RBRACK
+    ;
+
+if_statement
+    : IF expression THEN statement
+    | IF expression THEN statement ELSE statement
+    ;
+
+while_statement
+    : WHILE expression DO statement
+    ;
+
+for_statement
+    : FOR ID ASSIGN expression TO expression DO statement
+    | FOR ID ASSIGN expression DOWNTO expression DO statement
+    ;
+
+repeat_statement
+    : REPEAT statement_list UNTIL expression
+    ;
+
+function_call
+    : ID LPAREN argument_list RPAREN
+    ;
+
+argument_list
+    : ε
+    | expression
+    | argument_list COMMA expression
+    ;
+
+write_statement
+    : write_func LPAREN output_list RPAREN
+    ;
+
+write_func
+    : WRITE
+    | WRITELN
+    ;
+
+read_statement
+    : read_func LPAREN variable_list RPAREN
+    ;
+
+read_func
+    : READ
+    | READLN
+    ;
+
+output_list
+    : expression
+    | output_list COMMA expression
+    ;
+
+variable_list
+    : variable
+    | variable_list COMMA variable
+    ;
+
+expression
+    : logical_expression
+    ;
+
+logical_expression
+    : relational_expression
+    | logical_expression AND relational_expression
+    | logical_expression OR relational_expression
+    | NOT relational_expression
+    ;
+
+relational_expression
+    : addition_expression
+    | addition_expression relop addition_expression
+    ;
+
+addition_expression
+    : mult_expression
+    | addition_expression addop mult_expression
+    ;
+
+mult_expression
+    : unary_expression
+    | mult_expression mulop unary_expression
+    ;
+
+unary_expression
+    : primary_expression
+    | sign unary_expression
+    ;
+
+primary_expression
+    : variable
+    | NUMBER
+    | STRING_LITERAL
+    | TRUE
+    | FALSE
+    | LPAREN expression RPAREN
+    | function_call
+    ;
+
+relop
+    : EQ
+    | NE
+    | LT
+    | LE
+    | GT
+    | GE
+    ;
+
+addop
+    : PLUS
+    | MINUS
+    ;
+
+mulop
+    : TIMES
+    | DIVIDE
+    | DIV
+    | MOD
+    ;
+
+sign
+    : PLUS
+    | MINUS
+    ;

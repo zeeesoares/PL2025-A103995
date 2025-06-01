@@ -1,0 +1,72 @@
+Running tests in ../tests...
+Output will be saved in ../tests/res
+
+=== Testing test10.txt ===
+✅ Compiled successfully
+EWVM output saved to ../tests/res/test10.ewvm
+
+=== Testing test11.txt ===
+Traceback (most recent call last):
+  File "/home/zeee/uni/PL/PL2025-A103995/Projeto::Compilador/scripts/../src/translator.py", line 503, in <module>
+    ast = parse_pascal(f.read())
+  File "/home/zeee/uni/PL/PL2025-A103995/Projeto::Compilador/src/anasin.py", line 486, in parse_pascal
+    return parser.parse(source_code)
+  File "/home/zeee/uni/PL/PL2025-A103995/Projeto::Compilador/src/anasin.py", line 42, in parse
+    raise Exception("Erros semânticos encontrados.")
+Exception: Erros semânticos encontrados.
+❌ Error in compiling
+
+=== Testing test12.txt ===
+Traceback (most recent call last):
+  File "/home/zeee/uni/PL/PL2025-A103995/Projeto::Compilador/scripts/../src/translator.py", line 503, in <module>
+    ast = parse_pascal(f.read())
+  File "/home/zeee/uni/PL/PL2025-A103995/Projeto::Compilador/src/anasin.py", line 486, in parse_pascal
+    return parser.parse(source_code)
+  File "/home/zeee/uni/PL/PL2025-A103995/Projeto::Compilador/src/anasin.py", line 32, in parse
+    raise Exception("Erros sintáticos encontrados.")
+Exception: Erros sintáticos encontrados.
+❌ Error in compiling
+
+=== Testing test13.txt ===
+✅ Compiled successfully
+EWVM output saved to ../tests/res/test13.ewvm
+
+=== Testing test1.txt ===
+✅ Compiled successfully
+EWVM output saved to ../tests/res/test1.ewvm
+
+=== Testing test2.txt ===
+✅ Compiled successfully
+EWVM output saved to ../tests/res/test2.ewvm
+
+=== Testing test3.txt ===
+✅ Compiled successfully
+EWVM output saved to ../tests/res/test3.ewvm
+
+=== Testing test4.txt ===
+✅ Compiled successfully
+EWVM output saved to ../tests/res/test4.ewvm
+
+=== Testing test5.txt ===
+✅ Compiled successfully
+EWVM output saved to ../tests/res/test5.ewvm
+
+=== Testing test6.txt ===
+✅ Compiled successfully
+EWVM output saved to ../tests/res/test6.ewvm
+
+=== Testing test7.txt ===
+✅ Compiled successfully
+EWVM output saved to ../tests/res/test7.ewvm
+
+=== Testing test8.txt ===
+✅ Compiled successfully
+EWVM output saved to ../tests/res/test8.ewvm
+
+=== Testing test9.txt ===
+✅ Compiled successfully
+EWVM output saved to ../tests/res/test9.ewvm
+
+=== Summary ===
+Passed Tests: 11
+Failed Tests: 2

@@ -1,0 +1,13 @@
+program CountVowels;
+var
+    s: string;
+    i, count: integer;
+begin
+    writeln('Introduza uma string:');
+    readln(s);
+    count := 0;
+    for i := 1 to length(s) do
+        if (s[i] = 'a') or (s[i] = 'e') or (s[i] = 'i') or (s[i] = 'o') or (s[i] = 'u') then
+            count := count + 1;
+    writeln('Numero de vogais: ', count);
+end.
